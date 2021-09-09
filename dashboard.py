@@ -85,6 +85,11 @@ def pret():
     if df_client['NAME_INCOME_TYPE_Working'].item()==1.0:
         incometype='Working'
     st.write("Type de revenu :", incometype)
+    if df_client['CODE_GENDER_F'].item()==1.0:
+        gendertype='Women'
+    if df_client['CODE_GENDER_M'].item()==1.0:
+        gendertype='Men'
+    st.write("Sexe :", gendertype)
     st.write("Nombre d'enfants :",df_client['CNT_CHILDREN'])
     nb_credits, salaire_moyen, credit_moyen = load_moyenne()
     st.write("Nombre de crédits:",(df_client.shape[0]))
